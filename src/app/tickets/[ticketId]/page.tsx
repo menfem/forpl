@@ -1,13 +1,14 @@
 import { initialTickets } from '@/data'
 
-type TicketPageProps = {
+type TicketPageParams = {
   params: {
-    ticketId: string
-  }
-}
+    ticketId: string;
+  };
+};
 
-const TicketPage = ({ params }: TicketPageProps) => {
-  const ticket = initialTickets.find((ticket) => ticket.id === params.ticketId)
+export default function TicketPage({ params }: TicketPageParams) {
+  const ticketId = params.ticketId
+  const ticket = initialTickets.find((ticket) => ticket.id === ticketId)
 
   if (!ticket) {
     return <div>Ticket not found</div>
@@ -20,5 +21,3 @@ const TicketPage = ({ params }: TicketPageProps) => {
     </div>
   )
 }
-
-export default TicketPage
