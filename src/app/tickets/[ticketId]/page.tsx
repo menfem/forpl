@@ -2,9 +2,9 @@ import { initialTickets } from '@/data'
 
 type TicketPageParams = {
   params: {
-    ticketId: string;
-  };
-};
+    ticketId: string
+  }
+}
 
 export default function TicketPage({ params }: TicketPageParams) {
   const ticketId = params.ticketId
